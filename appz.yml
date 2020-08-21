@@ -32,8 +32,8 @@ properties:
     MYSQL_REPLICATION_PASSWORD:
       vault: MYSQL_REPLICATION_PASSWORD
     MYSQL_PASSWORD:
-      vault:MYSQL_PASSWORD_KEY
+      vault: MYSQL_PASSWORD_KEY
     MYSQL_ROOT_PASSWORD:
-      vault:MYSQL_ROOT_PASSWORD_KEY
+      vault: MYSQL_ROOT_PASSWORD_KEY
     DB_MASTER: mariadb_master
     revision : 02
