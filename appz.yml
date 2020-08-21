@@ -1,0 +1,37 @@
+app:
+    name: mariadb Slave
+    code: mariadbslave
+    notify: appzdev@cloudbourne.co
+
+build:
+    version: 10.4
+    env: DEV
+    build_file: none
+    output_files: output/*.zip
+    image_template: mariadb_slave-10.4
+    image_name: alpha/mariadb_slave
+
+deploy:
+    context: alpha/DEV
+    replicas: 1
+
+volumes:
+  - claim: mariadb-slave-data
+    mount: /appz/data
+    name: data
+
+monitor:
+    notify: appzops@cloudbourne.co
+
+properties:
+    MYSQL_USER: wordpress
+    MYSQL_DATABASE: wordpress
+    MYSQL_REPLICATION_USER: replication
+    MYSQL_REPLICATION_PASSWORD:
+      vault: MYSQL_REPLICATION_PASSWORD
+    MYSQL_PASSWORD:
+      vault:MYSQL_PASSWORD_KEY
+    MYSQL_ROOT_PASSWORD:
+      vault:MYSQL_ROOT_PASSWORD_KEY
+    DB_MASTER: mariadb_master
+    revision : 01
