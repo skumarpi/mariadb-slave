@@ -36,4 +36,4 @@ properties:
     MYSQL_ROOT_PASSWORD:
       vault:MYSQL_ROOT_PASSWORD_KEY
     DB_MASTER: mariadb_master
-    revision : 01
+    revision : 02
