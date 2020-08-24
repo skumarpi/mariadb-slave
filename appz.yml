@@ -1,7 +1,7 @@
 app:
     name: mariadb Slave
     code: mariadbslave
-    notify: akanade@cloudcontrol.com
+    notify: appzdev@cloudbourne.co
 
 build:
     version: 10.4
