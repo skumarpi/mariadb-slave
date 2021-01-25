@@ -1,0 +1,12 @@
+
+users:
+  - name: wordpress
+    password: $MYSQL_WORDPRESS_PASSWORD
+    
+databases:
+  - name: wordpress
+  
+acl:
+  - database: wordpress
+    user: wordpress
+    access: ALL
